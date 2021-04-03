@@ -1,6 +1,11 @@
 <?php 
     $title = $email = $author = $date = $image = '';
+    // had lvar hatta hiya bach min ndir submit yab9aw les donnée maktobin ila kan chi ralat fchi input mat3awadch déclaration man jdid rani kanliyiha nit bhal value fal input ltaht fal forme
+
+
     $errors = array('title'=>'' , 'author'=>'', 'email'=>'' , 'image'=>'' , 'date'=>'');
+    //zadt had $errors bach ila b9at chi input khawya na9dar ntala3 message ya3lam biaannah khassha ta3mar
+    //whatta bach na9dar nathakam fles données li khasshom ya3amro bhal filter mais ana li kanathakam kifach ndir zadt ri variabl bach nssahal rwina
 
     if(isset($_POST['submit'])){
 
@@ -37,10 +42,11 @@
         // check image
         if(empty($_POST['image'])){
             $errors['image'] = 'in image is required <br />';
+            //hadi ma3raftch filter kifach nhaddad ri les img li yadakhlo 
         }   
         else{
             $image = $_POST['image'];
-            // echo htmlspecialchars($_POST['image']);
+            // ma3raftch lach makatab9ach bayna ki khwatatha 3assabtini )^^
         }
 
         // check date
@@ -51,7 +57,15 @@
             $date = $_POST['date'];
             // echo htmlspecialchars($_POST['date']);
         }
-    }
+
+        if(array_filter($errors)){
+            //ila kan chi error rah aytal3o les message li dégâ declarithom
+        } else {
+            header('Location: list-of-books.php');
+            //hna ila kollach kan mazyan ayamchi la page li britha normalement ayamchi la page li fiha tableux dyal gaa3 laktob
+        }
+
+    }//and of POST check
 ?>
 
 
@@ -67,7 +81,7 @@
     <section class="main">
         <div class="header">
             <h2>New Book :</h2>
-            <button class="button">Add</button>
+            <a href="list-of-books.php"><button class="button">Cancel</button></a>
         </div>
         <form class="form-add" action="books.php" method="POST">
             <label for="texte">Title :</label>
@@ -91,7 +105,7 @@
             <div class="errors" ><?php echo $errors['date']; ?></div>
 
             <div >
-                <input type="submit" name="submit" value="submit" class="button">
+                <input type="submit" name="submit" value="Add" class="button">
             </div>
         </form>
         <!-- <button>Add</button> -->

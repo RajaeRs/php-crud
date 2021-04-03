@@ -37,13 +37,16 @@ h2{
 }
 
 /* ---------main----------- */
-.main{
+.main , .indexmain {
     height:fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
     flex-direction: column;
+}
+.indexmain{
+    height: 80vh;
 }
 .border{
     border: solid 0.2rem rgb(0, 4, 255)  ;
