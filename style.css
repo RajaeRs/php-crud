@@ -45,7 +45,7 @@ h2{
     text-transform: uppercase;
     flex-direction: column;
 }
-.indexmain{
+.indexmain , .list-of-books{
     height: 80vh;
 }
 .border{
@@ -87,6 +87,9 @@ h2{
     border: none;
     color: white;
     cursor:pointer;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    margin-right: 0.4rem;
 }
 .errors{
     /* width: 20rem; */
@@ -105,6 +108,17 @@ h2{
     color: rgb(155, 154, 154);
     font-size:small;
     text-transform: capitalize;
+}
+table{
+    margin-left: 3rem;
+}
+th{
+    background-color: rgba(52, 41, 206, 0.486);
+    width: fit-content;
+}
+td{
+    padding: 1rem;
+
 }
 
 

@@ -11,6 +11,6 @@
     <h1>Library</h1>
     <ul class="nav">
         <li> <a href="./index.php"> Home </a></li>
-        <li><a href="./books.php"> Books </a></li>
+        <li><a href="./list-of-books.php"> Books </a></li>
     </ul>
 </section>
